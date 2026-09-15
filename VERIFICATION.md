@@ -25,3 +25,7 @@ f6e4e936808875c9a5b0427c63ab381ed4d0b5b6a5d50f8f656869235734f29f  uninstall.sh
 7c7cfd4eedbc339d51c862eece0083ee2fa05b8b51831b8bb2873a6ed9bca368  README.md
 277db3cbc16e79e9586c768e650c403096ef3b25c355d53a3c7ff13eea1fc2c0  LICENSE
 ```
+
+## Pacman packaging development
+
+The earlier local-installer results above are historical. New package validation and its explicit limits are documented in [PACKAGING.md](PACKAGING.md) and the per-commit GitHub workflow.
