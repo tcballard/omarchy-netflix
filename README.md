@@ -6,7 +6,11 @@ Open Netflix in its own Google Chrome app window, like Omarchy's bundled X web a
 
 Development preview 0.1.0. Intended for Omarchy 4 on x86_64. No installed Omarchy version has been tested here. Google Chrome and a Netflix account are required. The launcher uses Netflix's official 64×64 website PNG icon, unchanged. It does not modify Netflix's interface.
 
-## Install
+## Pacman packaging preview
+
+See [PACKAGING.md](PACKAGING.md) for the package build, migration, upgrade/removal instructions and current browser dependency limitation. This is not yet an Omarchy repository package.
+
+## Install locally
 
 Clone the repository and install:
 
