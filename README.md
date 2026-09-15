@@ -49,3 +49,5 @@ Live acceptance remains required: login, protected video playback, audio, subtit
 ## Reference and licence
 
 Pattern inspected: Omarchy's [X.desktop](https://github.com/omacom/omarchy/blob/2fbac0c8e88eca704af1650ce721a494bd11a3d0/applications/X.desktop) and web-app helpers at revision `2fbac0c8e88eca704af1650ce721a494bd11a3d0` on 2026-09-15. Launcher and installer code are original; MIT licensed. The bundled `netflix.png` was downloaded on 2026-09-15 from https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.png, the apple-touch-icon linked by https://www.netflix.com/. Netflix owns this artwork; it is excluded from the launcher code's MIT licence. Inclusion does not imply endorsement or an unrestricted licence to the Netflix mark. Netflix and Google Chrome remain their owners' products.
+
+The installer registers the app as **Netflix** using a user-local `.desktop` entry. This is desktop launcher registration, not a pacman package. Existing installations get the updated name by updating the checkout and rerunning `bash install.sh`.

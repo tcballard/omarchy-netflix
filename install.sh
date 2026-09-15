@@ -29,8 +29,8 @@ cat > "$tmp" <<EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Netflix (Unofficial)
-Comment=Watch Netflix in a dedicated Google Chrome window
+Name=Netflix
+Comment=Unofficial launcher: watch Netflix in a dedicated Google Chrome window
 Exec=$exec_arg
 Icon=omarchy-netflix
 Terminal=false
