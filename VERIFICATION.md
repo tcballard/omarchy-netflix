@@ -9,7 +9,7 @@ Historical checks on the original implementation (before the icon update), exit 
 
 The temporary harness did not open Chrome or use real account data.
 
-Current target-machine evidence on 2026-09-16: Omarchy, Chromium 151.0.7922.173 and Widevine 4.10.3050.0; protected Prime playback passed in normal-window mode and failed with error 7031 in app mode. This establishes the chosen browser/DRM path, but Netflix login/playback, window grouping, fullscreen, audio, scaling and sleep inhibition remain unverified.
+Current target-machine evidence on 2026-09-16: Omarchy, Chromium 151.0.7922.173 and Widevine 4.10.3050.0; protected Prime playback passed in normal-window mode and failed with error 7031 in app mode. Package validation also checks the reported `0.1.0` launcher version. This establishes the chosen browser/DRM path, but Netflix login/playback, window grouping, fullscreen, audio, scaling and sleep inhibition remain unverified.
 
 Environment: Linux-6.18.44-x86_64-with-glibc2.39
 GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)

@@ -4,11 +4,11 @@
 
 Open Netflix in its own Chromium window with a persistent Netflix-only profile. This is an independent launcher, not affiliated with or endorsed by Netflix. The badge identifies a community app, not official approval.
 
-Development preview 0.1.0. Intended for Omarchy 4 on x86_64. Chromium and a Netflix account are required. The launcher uses Netflix's official 64×64 website PNG icon, unchanged. It does not modify Netflix's interface. Normal Chromium window mode is used because that is the protected-playback path verified on the target Omarchy machine.
+Current release: **v0.1.0**. Intended for Omarchy 4 on x86_64. Chromium and a Netflix account are required. The launcher uses Netflix's official 64×64 website PNG icon, unchanged. It does not modify Netflix's interface. Normal Chromium window mode is used because that is the protected-playback path verified on the target Omarchy machine.
 
-## Pacman packaging preview
+## Arch package
 
-See [PACKAGING.md](PACKAGING.md) for the package build, migration, upgrade/removal instructions and current browser dependency limitation. This is not yet an Omarchy repository package.
+See [PACKAGING.md](PACKAGING.md) for package installation, migration, upgrade and removal instructions. This is an official release of this community project, not an Omarchy repository package or a Netflix product.
 
 ## Install locally
 

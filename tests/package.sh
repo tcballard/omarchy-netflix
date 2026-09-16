@@ -20,6 +20,7 @@ pacman -U --noconfirm --assume-installed chromium=999 "$pkg"
 desktop-file-validate /usr/share/applications/omarchy-netflix.desktop
 grep -Fx 'Name=Netflix' /usr/share/applications/omarchy-netflix.desktop
 [[ $(pacman -Qoq /usr/bin/omarchy-netflix) == omarchy-netflix ]]
+[[ $(omarchy-netflix --version) == 'omarchy-netflix 0.1.0' ]]
 cat > /usr/bin/chromium <<'BROWSER'
 #!/bin/bash
 printf '%s\n' "$@" > "$HOME/browser-args"
