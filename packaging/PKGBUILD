@@ -1,0 +1,29 @@
+# Maintainer: Tom Ballard (tcballard)
+pkgname=omarchy-netflix
+pkgver=0.1.0pre1
+pkgrel=1
+pkgdesc='Unofficial Netflix web launcher with a dedicated Chromium profile'
+arch=('x86_64')
+url='https://github.com/tcballard/omarchy-netflix'
+license=('MIT' 'LicenseRef-Proprietary-Artwork')
+depends=('bash' 'coreutils' 'diffutils' 'grep' 'pacman' 'chromium' 'hicolor-icon-theme')
+optdepends=('libnotify: startup error notifications' 'uwsm: managed Wayland startup' 'desktop-file-utils: refresh local entries during migration')
+options=('!debug' '!strip')
+_commit=841706bce22b84a6c39568cb8ba77252b9600b61
+source=("$pkgname-$_commit.tar.gz::https://github.com/tcballard/$pkgname/archive/$_commit.tar.gz"
+        'omarchy-netflix.desktop'
+        'omarchy-netflix-migrate-local'
+        'THIRD-PARTY-NOTICES')
+sha256sums=('1afcc1ff4a68c9c28b103990432264c130f34c0ef3969a4350da865fcfea03d8'
+            '30b30044194d680a34cd426d1b7135e9becca8ab00c2e3573f79542ced6c3daf'
+            'f918b93c9b07e7089b6648ec356d5bfd57489b81efc12ea414fdc3d9da800aca'
+            '78a565ac2edd8201fcff369dacbcfaa196cf6f39fff3da5f164c3a93d4b0fa1c')
+
+package() {
+  install -Dm755 "$srcdir/$pkgname-$_commit/$pkgname" "$pkgdir/usr/bin/$pkgname"
+  install -Dm755 "$srcdir/$pkgname-migrate-local" "$pkgdir/usr/bin/$pkgname-migrate-local"
+  install -Dm644 "$srcdir/$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
+  install -Dm644 "$srcdir/$pkgname-$_commit/netflix.png" "$pkgdir/usr/share/icons/hicolor/64x64/apps/$pkgname.png"
+  install -Dm644 "$srcdir/$pkgname-$_commit/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 "$srcdir/THIRD-PARTY-NOTICES" "$pkgdir/usr/share/licenses/$pkgname/THIRD-PARTY-NOTICES"
+}

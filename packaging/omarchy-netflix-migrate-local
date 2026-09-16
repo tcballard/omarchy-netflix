@@ -1,0 +1,36 @@
+#!/bin/bash
+set -euo pipefail
+(( $# == 0 )) || { echo "Usage: omarchy-netflix-migrate-local" >&2; exit 2; }
+(( EUID != 0 )) || { echo 'Run this as your desktop user, without sudo.' >&2; exit 1; }
+pacman -Q omarchy-netflix >/dev/null
+[[ $(pacman -Qoq /usr/bin/omarchy-netflix) == omarchy-netflix ]] || exit 1
+data=${XDG_DATA_HOME:-}
+[[ $data == /* ]] || data="$HOME/.local/share"
+helper="$data/omarchy-netflix/omarchy-netflix"
+desktop="$data/applications/omarchy-netflix.desktop"
+icon="$data/icons/hicolor/64x64/apps/omarchy-netflix.png"
+# Refuse symlinks and modified helpers/icons; never delete personal files.
+for path in "$helper" "$desktop" "$icon"; do
+  [[ ! -L $path ]] || { echo "Refusing symlink: $path" >&2; exit 1; }
+  [[ ! -e $path || -f $path ]] || { echo "Not a regular file: $path" >&2; exit 1; }
+done
+[[ ! -e $helper ]] || cmp -s -- "$helper" /usr/bin/omarchy-netflix || { echo 'Local helper differs; review it manually.' >&2; exit 1; }
+[[ ! -e $icon ]] || cmp -s -- "$icon" /usr/share/icons/hicolor/64x64/apps/omarchy-netflix.png || { echo 'Local icon differs; review it manually.' >&2; exit 1; }
+if [[ -e $desktop ]]; then
+  grep -Fxq 'Icon=omarchy-netflix' "$desktop" || { echo 'Unrecognised local desktop entry.' >&2; exit 1; }
+  grep -Fxq 'StartupWMClass=omarchy-netflix' "$desktop" || { echo 'Unrecognised local desktop entry.' >&2; exit 1; }
+fi
+if [[ ! -e $helper && ! -e $desktop && ! -e $icon ]]; then
+  echo 'No legacy local installation found.'; exit 0
+fi
+umask 077
+mkdir -p -- "$data/omarchy-app-migration"
+backup=$(mktemp -d "$data/omarchy-app-migration/omarchy-netflix.XXXXXX")
+# Back up the entry first. If interrupted, the package entry is already visible.
+[[ ! -e $desktop ]] || mv -- "$desktop" "$backup/omarchy-netflix.desktop"
+[[ ! -e $helper ]] || mv -- "$helper" "$backup/omarchy-netflix"
+[[ ! -e $icon ]] || mv -- "$icon" "$backup/omarchy-netflix.png"
+if command -v update-desktop-database >/dev/null 2>&1; then
+  update-desktop-database "$data/applications" || true
+fi
+printf 'Local launcher backed up to %s. Browser profile preserved.\n' "$backup"
