@@ -9,13 +9,13 @@ license=('MIT' 'LicenseRef-Proprietary-Artwork')
 depends=('bash' 'coreutils' 'diffutils' 'grep' 'pacman' 'chromium' 'hicolor-icon-theme')
 optdepends=('libnotify: startup error notifications' 'uwsm: managed Wayland startup' 'desktop-file-utils: refresh local entries during migration')
 options=('!debug' '!strip')
-_commit=20c07d0cd909449ffd8df71fb17628f4f4a58cec
+_commit=841706bce22b84a6c39568cb8ba77252b9600b61
 source=("$pkgname-$_commit.tar.gz::https://github.com/tcballard/$pkgname/archive/$_commit.tar.gz"
         'omarchy-netflix.desktop'
         'omarchy-netflix-migrate-local'
         'THIRD-PARTY-NOTICES')
-sha256sums=('455360a645c68898cddee62fde899a7e2456ac6597b84d7c7aec9405b433e73e'
-            '8416f753494280f281c49d9cc2877ea0de9bde82abe68d6b703ce5376f51ffef'
+sha256sums=('1afcc1ff4a68c9c28b103990432264c130f34c0ef3969a4350da865fcfea03d8'
+            '30b30044194d680a34cd426d1b7135e9becca8ab00c2e3573f79542ced6c3daf'
             'f918b93c9b07e7089b6648ec356d5bfd57489b81efc12ea414fdc3d9da800aca'
             '78a565ac2edd8201fcff369dacbcfaa196cf6f39fff3da5f164c3a93d4b0fa1c')
 
