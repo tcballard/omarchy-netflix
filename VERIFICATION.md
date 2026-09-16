@@ -4,12 +4,12 @@ Inputs: `SHA256SUMS` identifies the tested implementation and accompanying docum
 
 Historical checks on the original implementation (before the icon update), exit 0:
 - `bash -n omarchy-netflix install.sh uninstall.sh`.
-- Temporary-directory subprocess smoke harness invoked the actual installer, decoded the generated desktop Exec through both escaping layers, and executed the installed helper against a fake Chrome executable.
+- Temporary-directory subprocess smoke harness invoked the actual installer, decoded the generated desktop Exec through both escaping layers, and executed the installed helper against a fake browser executable.
 - Confirmed fixed Netflix URL, persistent profile argument, private new profile directory, paths containing spaces/percent/dollar/backtick/quote/backslash, repeat installation and removal preserving profile data, rejection of extra browser options, missing-Chrome error, relative XDG fallback, and Wayland uwsm delegation using a stub.
 
 The temporary harness did not open Chrome or use real account data.
 
-Not run: desktop-file-validate and ShellCheck (not installed); Arch package build (this is a user-local installer, not a pacman package); actual Chrome, Netflix login/DRM/playback; real Omarchy launcher, window grouping, fullscreen, audio, scaling and sleep inhibition. No Omarchy version installed/tested.
+Current target-machine evidence on 2026-09-16: Omarchy, Chromium 151.0.7922.173 and Widevine 4.10.3050.0; protected Prime playback passed in normal-window mode and failed with error 7031 in app mode. This establishes the chosen browser/DRM path, but Netflix login/playback, window grouping, fullscreen, audio, scaling and sleep inhibition remain unverified.
 
 Environment: Linux-6.18.44-x86_64-with-glibc2.39
 GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)

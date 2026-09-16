@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=Netflix
-Comment=Unofficial launcher for Netflix in Google Chrome
+Comment=Unofficial launcher for Netflix in Chromium
 Exec=/usr/bin/omarchy-netflix
 Icon=omarchy-netflix
 Terminal=false

@@ -2,12 +2,11 @@
 pkgname=omarchy-netflix
 pkgver=0.1.0pre1
 pkgrel=1
-pkgdesc='Unofficial Netflix web launcher with a dedicated Google Chrome profile'
-# Launcher code is portable; the supported browser dependency is x86_64 only.
+pkgdesc='Unofficial Netflix web launcher with a dedicated Chromium profile'
 arch=('x86_64')
 url='https://github.com/tcballard/omarchy-netflix'
 license=('MIT' 'LicenseRef-Proprietary-Artwork')
-depends=('bash' 'coreutils' 'diffutils' 'grep' 'pacman' 'google-chrome' 'hicolor-icon-theme')
+depends=('bash' 'coreutils' 'diffutils' 'grep' 'pacman' 'chromium' 'hicolor-icon-theme')
 optdepends=('libnotify: startup error notifications' 'uwsm: managed Wayland startup' 'desktop-file-utils: refresh local entries during migration')
 options=('!debug' '!strip')
 _commit=20c07d0cd909449ffd8df71fb17628f4f4a58cec
