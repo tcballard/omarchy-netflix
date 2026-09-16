@@ -27,7 +27,7 @@ Removal preserves login data and migration backups. To return to the local insta
 
 ## Sources and release route
 
-The recipe pins the Chromium normal-window launcher source to commit `841706bce22b84a6c39568cb8ba77252b9600b61` and a SHA-256 digest. Desktop and migration files are separately checksummed. It installs only `/usr/bin`, `/usr/share/applications`, icons and licence notices. Social preview artwork is excluded.
+The recipe pins the v0.1.0 Chromium normal-window launcher source to commit `4e1645dba56d1d3f6cf99ce24ce9f917b52da6c1` and a SHA-256 digest. Desktop and migration files are separately checksummed. It installs only `/usr/bin`, `/usr/share/applications`, icons and licence notices. Social preview artwork is excluded.
 
 `packaging/.omarchy/package.json` is prepared as local-source metadata for a future `pkgbuilds/omarchy-netflix/` contribution. This project release remains separate from the Omarchy package repository. Upstream submission would additionally require Netflix playback and installed-launcher desktop acceptance, artwork redistribution review and repository-specific release metadata.
 

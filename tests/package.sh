@@ -59,7 +59,7 @@ sed -i 's/^pkgrel=1$/pkgrel=2/' PKGBUILD
 runuser -u package-test -- makepkg --nodeps --force
 upgrade=$(find . -maxdepth 1 -name 'omarchy-netflix-*-2-x86_64.pkg.tar.zst' -print -quit)
 pacman -U --noconfirm --assume-installed chromium=999 "$upgrade"
-pacman -Q omarchy-netflix | grep -F '0.1.0pre1-2'
+pacman -Q omarchy-netflix | grep -F '0.1.0-2'
 pacman -R --noconfirm omarchy-netflix
 [[ ! -e /usr/bin/omarchy-netflix && ! -e /usr/share/applications/omarchy-netflix.desktop ]]
 grep -Fx saved '/home/package-test/config space/omarchy-netflix/chrome/login-marker'

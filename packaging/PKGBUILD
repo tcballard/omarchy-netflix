@@ -1,6 +1,6 @@
 # Maintainer: Tom Ballard (tcballard)
 pkgname=omarchy-netflix
-pkgver=0.1.0pre1
+pkgver=0.1.0
 pkgrel=1
 pkgdesc='Unofficial Netflix web launcher with a dedicated Chromium profile'
 arch=('x86_64')
@@ -9,12 +9,12 @@ license=('MIT' 'LicenseRef-Proprietary-Artwork')
 depends=('bash' 'coreutils' 'diffutils' 'grep' 'pacman' 'chromium' 'hicolor-icon-theme')
 optdepends=('libnotify: startup error notifications' 'uwsm: managed Wayland startup' 'desktop-file-utils: refresh local entries during migration')
 options=('!debug' '!strip')
-_commit=841706bce22b84a6c39568cb8ba77252b9600b61
+_commit=4e1645dba56d1d3f6cf99ce24ce9f917b52da6c1
 source=("$pkgname-$_commit.tar.gz::https://github.com/tcballard/$pkgname/archive/$_commit.tar.gz"
         'omarchy-netflix.desktop'
         'omarchy-netflix-migrate-local'
         'THIRD-PARTY-NOTICES')
-sha256sums=('1afcc1ff4a68c9c28b103990432264c130f34c0ef3969a4350da865fcfea03d8'
+sha256sums=('bb844d5b6b9f8bbb680b4828a748cd7798fd9c716b49bf6be184f72ef462a627'
             '30b30044194d680a34cd426d1b7135e9becca8ab00c2e3573f79542ced6c3daf'
             'f918b93c9b07e7089b6648ec356d5bfd57489b81efc12ea414fdc3d9da800aca'
             '78a565ac2edd8201fcff369dacbcfaa196cf6f39fff3da5f164c3a93d4b0fa1c')
